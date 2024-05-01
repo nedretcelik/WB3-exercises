@@ -22,6 +22,7 @@ console.log("Medicare Tax Amount is: " + getMedicareTax(grossPayAmount).toFixed(
 
 
 function getFederalTax(grossPay, withHoldingCode) {
+
     if(withHoldingCode == 0) {
         let taxAmount = grossPay * 0.23;
         return taxAmount;
@@ -42,14 +43,16 @@ function getFederalTax(grossPay, withHoldingCode) {
         return taxAmount;
 
     } else {
-        let rate  = .18 - (0.5 * (withHoldingCode-4));
+        let rate  = .18 -  (0.005 * (withHoldingCode-4) );
         let taxAmount = grossPay * rate;
         return taxAmount;
     }
 
 }
 
-console.log("Person 1: " + "gross pay $" + grossPayAmount + " withholding code 0 " + getFederalTax(grossPayAmount,0));
+let withHoldingCodeRandom = Math.floor(Math.random() *7);
+
+console.log("Person 1: " + "gross pay $" + grossPayAmount + " withholding code " +withHoldingCodeRandom+ " " + getFederalTax((grossPayAmount), withHoldingCodeRandom));
 
 
 
