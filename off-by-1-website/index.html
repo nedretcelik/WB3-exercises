@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off By 1 Website</title>
+</head>
+<body>
+    <main>
+        <input type="date" id="dateInput">
+        <button type="button" id="dateBtn">Display Date</button><br>
+        <p id="paragraphInput"></p>
+
+
+    <script>
+
+        function init() {
+            const dateBtn = document.getElementById("dateBtn");
+
+            dateBtn.onclick = displayDate;
+
+        }
+
+        window.onload = init;
+
+        function displayDate() {
+            const dateInput = new Date(document.getElementById("dateInput").value);
+            const paragraphInput = document.getElementById("paragraphInput");
+            
+            paragraphInput.innerText = dateInput.toISOString();
+        }
+    </script>
+
+</body>
+</html>
