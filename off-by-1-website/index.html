@@ -9,25 +9,33 @@
     <main>
         <input type="date" id="dateInput">
         <button type="button" id="dateBtn">Display Date</button><br>
-        <p id="paragraphInput"></p>
+        <p id="messageParagraph"></p>
 
 
     <script>
 
-        function init() {
+        
+
+        window.onload = function () {
             const dateBtn = document.getElementById("dateBtn");
 
             dateBtn.onclick = displayDate;
 
         }
 
-        window.onload = init;
-
         function displayDate() {
             const dateInput = new Date(document.getElementById("dateInput").value);
+            const messageParagraph = document.getElementById("messageParagraph");
+            
+            messageParagraph.innerText = dateInput.toISOString();
+
+
+
+              /*  const dateInput = document.getElementById("dateInput").value;
             const paragraphInput = document.getElementById("paragraphInput");
             
-            paragraphInput.innerText = dateInput.toISOString();
+            paragraphInput.innerText = dateInput.toString();
+        } */
         }
     </script>
 

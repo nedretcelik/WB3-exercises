@@ -1,10 +1,10 @@
-function init() {
+
+
+window.onload = function init() {
     const submitBtn = document.getElementById("submitBtn");
 
     submitBtn.onclick = displayRemainingDays;
 }
-
-window.onload = init;
 
 function displayRemainingDays() {
     const dateInput = new Date(document.getElementById("dateInput").value);
